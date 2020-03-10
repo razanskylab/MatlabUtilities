@@ -1,7 +1,13 @@
-clear all;
-close all;
+clear all; %#ok<*CLALL>
 try
-  delete(findall(0)); % closes gui figures as weel
+    close all;
+catch
+%     while(~isempty(get(groot,'CurrentFigure')))
+%         delete(gcf);
+%     end
+end
+try %#ok<*TRYNC>
+  delete(findall(0)); % closes gui figures as well
 end
 clc;
 rehash path;
