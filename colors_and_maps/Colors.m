@@ -135,6 +135,7 @@ classdef Colors < handle
     redtoBlue = make_linear_colormap(Colors.PureRed,Colors.PureBlue,Colors.nColors);
 
     blueToRedDark = make_linear_colormap(Colors.DarkBlue,Colors.DarkRed,Colors.nColors);
+    lowContrast = make_linear_colormap([0.55, 0.55, 0.55], [0.45, 0.45, 0.45], Colors.nColors);
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % linear colormaps based on flat ui color picker colors

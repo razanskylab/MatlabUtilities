@@ -11,3 +11,4 @@ General utilities useful for various processing tasks, used in many other reposi
 - color_message (cprintf): <https://ch.mathworks.com/matlabcentral/fileexchange/24093-cprintf-display-formatted-colored-text-in-the-command-window>
 - see respective files for liscence infos
 - ndnanfilter.m: <https://ch.mathworks.com/matlabcentral/fileexchange/20417-ndnanfilter-m>
+- progressbar: <https://ch.mathworks.com/matlabcentral/fileexchange/6922-progressbar>
