@@ -1,4 +1,4 @@
-function [h,s,p] = pretty_hist(x,varargin)
+function [h,s,p,edges] = pretty_hist(x,varargin)
   % pretty_hist(x,color,nBins,normalization,doFit)
   % creats pretty histograms by default, kinda inspired by nHist function
   % but a lot less hassel and lot more Joe!
@@ -19,7 +19,7 @@ function [h,s,p] = pretty_hist(x,varargin)
     wasHold = ishold;
   end
 
-  alpha = 0.3; % set default alpha, can be overwritten using a color trick...
+  alpha = 0.15; % set default alpha, can be overwritten using a color trick...
   nVarargs = length(varargin);
   defaultFaceColor = [0.0, 0.6, 0.0];
   kernelSmoothing = 5; % the larger the value, the more smoothing...
@@ -47,22 +47,32 @@ function [h,s,p] = pretty_hist(x,varargin)
     nBins = 50;
     normalization = 'probability';
     doFit = true;
+    edges = [];
   elseif (nVarargs == 1)
     nBins = 50;
     normalization = 'probability';
     doFit = true;
+    edges = [];
   elseif (nVarargs == 2)
     nBins = varargin{2};
     normalization = 'probability';
     doFit = true;
+    edges = [];
   elseif (nVarargs == 3)
     nBins = varargin{2};
     normalization = varargin{3};
     doFit = true;
+    edges = [];
   elseif (nVarargs == 4)
     nBins = varargin{2};
     normalization = varargin{3};
     doFit = varargin{4};
+    edges = [];
+  elseif (nVarargs == 5)
+    nBins = varargin{2};
+    normalization = varargin{3};
+    doFit = varargin{4};
+    edges = varargin{5};
   else
     short_warn('Unknown pretty_hist parameters. Trying to use default!');
     faceColor = [0.0, 0.6, 0.0]; % nice dark green
@@ -71,14 +81,23 @@ function [h,s,p] = pretty_hist(x,varargin)
     doFit = true;
   end
 
-  [counts,edges] = histcounts(x,nBins,'Normalization',normalization);
+  if isempty(edges)
+    [counts,edges] = histcounts(x,nBins,'Normalization',normalization);
+  else
+    [counts,edges] = histcounts(x,edges,'Normalization',normalization);
+  end 
+
+  % make y axis nicer for Probability plots...
+  if strcmp(normalization,'probability')
+    counts = counts*100; % show prob. in %
+  end
   % in some case matlab creates empty bins, but we no like empty bins!
-  nonZeroBins = length(nonzeros(counts));
+  % nonZeroBins = length(nonzeros(counts));
   % if nonZeroBins < nBins
   %   nBins = nonZeroBins;
   %   [counts,edges] = histcounts(x,nBins,'Normalization',normalization);
   % end
-  h = histogram('BinEdges',edges,'BinCounts',counts,'Normalization',normalization); % normal hist
+  h = histogram('BinEdges',edges,'BinCounts',counts); % normal hist
   h.FaceColor = faceColor;
   h.FaceAlpha = alpha;
   h.EdgeColor = 'none';
@@ -93,18 +112,8 @@ function [h,s,p] = pretty_hist(x,varargin)
   s.LineWidth = 1;
   s.Color = lineColor;
 
-  % make y axis nicer for Probability plots...
   if strcmp(normalization,'probability')
-      if verLessThan('matlab', '8.6.0.267246')
-          % for matlab before 2015b
-          warning ('off','all');
-          ax.YTickLabels = num2cell(ax.YTick*100)';
-          warning ('on','all');
-      else
-          % for matlab starting with 2015b
-         ax.YAxis.TickLabels = num2cell(ax.YAxis.TickValues*100)';
-      end
-      ylabel('Probability [%]');
+    ylabel(normalization);
   end
 
   % ger kernel estimate for nBins points 
