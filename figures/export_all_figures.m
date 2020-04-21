@@ -11,7 +11,7 @@ createPNG = 0;
 saveAllFigure = 1;
 
 resolution = '-r300'; % bigger files but pretier, good for printing/publications
-% resolution = '-r150'; % good compromise of size and look
+resolution = '-r150'; % good compromise of size and look
 % resolution = '-r80'; % quick and dirty
 
 if saveAllFigure
