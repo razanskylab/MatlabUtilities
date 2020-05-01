@@ -1,0 +1,7 @@
+[submodule "SubModules/export_fig"]
+	path = SubModules/export_fig
+	url = https://github.com/altmany/export_fig.git
+[submodule "SubModules/BrewerMap"]
+	path = SubModules/BrewerMap
+	url = 	https://github.com/DrosteEffect/BrewerMap
+

@@ -14,6 +14,7 @@ classdef Colors < handle
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % define some pretty colors for plotting -------------------------------------
     PureRed = [1.0, 0.0, 0.0];
+    Red = [1.0, 0.0, 0.0];
     DarkRed = [150,0,0]./255;
     BloodRed = [187, 10, 30]*0.8./255;
     % my own simple colors
@@ -23,12 +24,14 @@ classdef Colors < handle
 
     DarkGreen = [0.0, 0.6, 0.0];
     BrightGreen = [0.0, 1.0, 0.0];
+    Green = [0.0, 1.0, 0.0];
     LightGreen = [0.0, 0.8, 0.0];
 
     DarkPurple = [0.5, 0.0, 0.5];
     DarkBlue = [103,169,207]./2./255;
     DarkishBlue = [5,100,255]./255;
     PureBlue = [0,0,255]./255;
+    Blue = [0,0,255]./255;
     DarkViolett = [100,0,55]./255;
 
     LightGray = [255, 255, 255]*0.75./255;
