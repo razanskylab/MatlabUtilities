@@ -50,5 +50,5 @@ function export_multi_figures(figHandles,fileName,exportFolder,whatExp)
 
 	end
 	disp('Done!')
-	winopen(exportFolder);
+	% winopen(exportFolder);
 end
