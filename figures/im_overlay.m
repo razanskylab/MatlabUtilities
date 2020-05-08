@@ -14,7 +14,7 @@ function [overlayed,montage] = im_overlay(background,overlay,varargin)
   p = inputParser;
   addRequired(p,'background',@isnumeric);
   addRequired(p,'overlay',@isnumeric);
-  addParameter(p,'color',defaultColor,@iscell);
+  addParameter(p,'color',defaultColor,@isnumeric);
   addParameter(p,'opacity',defaultOpacity,@iscell);
   addParameter(p,'showMontage',defaultShowMontage,@islogical);
   parse(p,background,overlay,varargin{:});

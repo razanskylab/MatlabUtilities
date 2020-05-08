@@ -2,6 +2,11 @@ classdef Colors < handle
   properties (Constant = true)
     nColors = 256;
 
+    % colormaps: 
+    % brewermap
+    % cmocean
+
+
     % need more colors? Check this out:
     % http://paletton.com/#uid=70g0u0kw0w0jyC+oRxVy4oIDfjr 
 
@@ -111,6 +116,7 @@ classdef Colors < handle
     jordyBlue = [137, 196, 244]./255;
     steelBlue = [75, 119, 190]./255;
     fountainBlue = [92, 151, 191]./255;
+    deepSkyBlue = [25, 181, 254]./255;
 
     % ORANGES from  http://www.flatuicolorpicker.com/category/orange
     saffronMango= [250,190,88]./255;
