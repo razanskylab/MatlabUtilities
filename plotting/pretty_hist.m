@@ -9,6 +9,8 @@ function [h,s,p,edges] = pretty_hist(x,varargin)
   % 
   % [h,s,p] = pretty_hist(x,varargin)
   % [h,s,p] = pretty_hist(x,color,nBins,normalization,doFit)
+  % [h,s,p] = pretty_hist(x,[1 0 0],100,'probability',false);
+
   % h - handle to histogram
   % s - handle to stairs
   % p - handle to fit plot

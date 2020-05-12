@@ -1,11 +1,11 @@
 rehash path;
 
-fileName = 'overlays_zoomed';
+fileName = 'heat_maps';
 exportFolder = 'X:\data_temp\';
 createPDF = 1;
-createJPG = 0;
+createJPG = 1;
 createFIG = 1;
-createTIFF = 1;
+createTIFF = 0;
 createPNG = 0;
 
 saveAllFigure = 1;
