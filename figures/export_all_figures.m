@@ -1,17 +1,20 @@
 rehash path;
 
-fileName = 'heat_maps';
-exportFolder = 'X:\data_temp\';
+fileName = 'all_vessels';
+useFigName = true;
+
+exportFolder = 'X:\data_temp\vessels\';
 createPDF = 1;
-createJPG = 1;
-createFIG = 1;
-createTIFF = 0;
+createJPG = 0;
+createFIG = 0;
+createTIFF = 1;
 createPNG = 0;
 
 saveAllFigure = 1;
 
-resolution = '-r300'; % bigger files but pretier, good for printing/publications
+% resolution = '-r300'; % bigger files but pretier, good for printing/publications
 % resolution = '-r150'; % good compromise of size and look
+resolution = '-r100'; % good compromise of size and look
 % resolution = '-r80'; % quick and dirty
 
 if saveAllFigure
@@ -24,8 +27,17 @@ nFigures = length(figureHandles);
 
 for iFigure = 1:numel(figureHandles)
 	set(0,'CurrentFigure',figureHandles(iFigure))
-	exportFileNameBase = [exportFolder fileName '_' num2str(iFigure)];
-	disp(['Saving ' fileName '_' num2str(iFigure)])
+	curFigHa = gcf; 
+	figName = curFigHa.Name;
+
+	if useFigName && ~isempty(figName)
+		exportFileNameBase = [exportFolder figName];
+		disp(['Saving ' figName])
+	else
+		exportFileNameBase = [exportFolder fileName '_' num2str(iFigure)];
+		disp(['Saving ' fileName '_' num2str(iFigure)])
+	end
+
 	if createJPG
 		exportPath = [exportFileNameBase '.jpg'];
 		export_fig(exportPath,'-jpg','-a1',resolution,'-nofontswap');
