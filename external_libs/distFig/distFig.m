@@ -455,8 +455,8 @@ Empty = arrayfun(@(n) (isempty(Fig_Number{n})),1:numel(Fig_Number));
 Fig_Number(Empty) = {0};
 Fig_Number = cell2mat(Fig_Number);
 [~,Index] = sort(get(Fig_Object(Fig_Number == 0),'Name'));
-Temp = find(Fig_Number == 0);
-Fig_Number(Temp(Index)) = -(numel(Index):(-1):1);
+% Temp = find(Fig_Number == 0);
+% Fig_Number(Temp(Index)) = -(numel(Index):(-1):1);
 
 % ===== Logical distribution array ========================================
 Fig_Dist = true(1,numel(Fig_Object));

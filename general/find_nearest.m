@@ -1,4 +1,5 @@
 function [nearestVal,nearestIdx] = find_nearest(findVals,data)
+  short_warn('Use dsearchn(data,findVals) is much more efficient!');
   % [nearestVal,nearestIdx] = find_nearest(findVals,data)
   % looks for nearerst val and index for findVals on data
   findVals = double(findVals);
