@@ -1,20 +1,20 @@
 rehash path;
 
-fileName = 'all_vessels';
+fileName = 'separation_process';
 useFigName = true;
 
-exportFolder = 'X:\data_temp\vessels\';
+exportFolder = 'c:\data_temp\figures\';
 createPDF = 1;
-createJPG = 0;
+createJPG = 1;
 createFIG = 0;
-createTIFF = 1;
+createTIFF = 0;
 createPNG = 0;
 
 saveAllFigure = 1;
 
 % resolution = '-r300'; % bigger files but pretier, good for printing/publications
-% resolution = '-r150'; % good compromise of size and look
-resolution = '-r100'; % good compromise of size and look
+resolution = '-r150'; % good compromise of size and look
+% resolution = '-r100'; % good compromise of size and look
 % resolution = '-r80'; % quick and dirty
 
 if saveAllFigure
