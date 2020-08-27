@@ -121,7 +121,8 @@ function [h,s,p,edges] = pretty_hist(x,varargin)
   % ger kernel estimate for nBins points 
   if doFit
     xEval = linspace(fullEdges(1),fullEdges(end),nBins);
-    [est,pointLoc] = ksdensity(x,xEval,'Bandwidth',5,'BoundaryCorrection','reflection'); 
+    % [est,pointLoc] = ksdensity(x,xEval,'Bandwidth',5,'BoundaryCorrection','reflection'); 
+    [est,pointLoc] = ksdensity(x,xEval,'BoundaryCorrection','reflection'); 
     est = est./max(est(:)).*max(counts(:));
     p = plot(pointLoc,est);
     p.LineWidth = 2;
