@@ -9,7 +9,7 @@ function [h,s,p,edges] = pretty_hist(x,varargin)
   % 
   % [h,s,p] = pretty_hist(x,varargin)
   % [h,s,p] = pretty_hist(x,color,nBins,normalization,doFit)
-  % [h,s,p] = pretty_hist(x,[1 0 0],100,'probability',false);
+  % [h,s,p] = pretty_hist(x,[1 0 0],100,'probability',false,);
 
   % h - handle to histogram
   % s - handle to stairs
@@ -24,7 +24,6 @@ function [h,s,p,edges] = pretty_hist(x,varargin)
   alpha = 0.15; % set default alpha, can be overwritten using a color trick...
   nVarargs = length(varargin);
   defaultFaceColor = [0.0, 0.6, 0.0];
-  kernelSmoothing = 5; % the larger the value, the more smoothing...
 
   if (nVarargs > 0) && ~isempty(varargin{1}) % color argument was provided
     if ~(size(varargin{1},1)>1) %same color for line and face
