@@ -20,15 +20,14 @@ function [h,s,p,edges] = pretty_hist_update(x,h,s,p,normalization)
   s.YData = counts;
 
   % ger kernel estimate for nBins points 
-  if ~isempty(p)
+  isNoNaN = sum(isfinite(x));
+  if ~isempty(p) && isNoNaN
     xEval = linspace(fullEdges(1),fullEdges(end),nBins*5);
     [est,pointLoc] = ksdensity(x,xEval,'BoundaryCorrection','reflection'); 
     est = est./max(est(:)).*max(counts(:)); % scale to match counts
     % p = plot(pointLoc,est);
     p.XData = pointLoc;
     p.YData = est;
-  else
-    p = []; 
   end
 
 end

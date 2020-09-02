@@ -118,7 +118,8 @@ function [h,s,p,edges] = pretty_hist(x,varargin)
   end
 
   % ger kernel estimate for nBins points 
-  if doFit
+  isNoNaN = sum(isfinite(x));
+  if doFit && isNoNaN
     xEval = linspace(fullEdges(1),fullEdges(end),nBins);
     % [est,pointLoc] = ksdensity(x,xEval,'Bandwidth',5,'BoundaryCorrection','reflection'); 
     [est,pointLoc] = ksdensity(x,xEval,'BoundaryCorrection','reflection'); 
@@ -126,7 +127,13 @@ function [h,s,p,edges] = pretty_hist(x,varargin)
     p = plot(pointLoc,est);
     p.LineWidth = 2;
     p.Color = lineColor;
-  else
+  elseif doFit && ~isNoNaN % prepare plot anyway for later updates with data?
+    xTemp = zeros(1,numel(x));
+    xEval = linspace(fullEdges(1),fullEdges(end),nBins);
+    [~,pointLoc] = ksdensity(xTemp,xEval,'BoundaryCorrection','reflection'); 
+    p = plot(pointLoc,xTemp);
+    p.LineWidth = 2;
+    p.Color = lineColor;
     p = []; 
   end
 
