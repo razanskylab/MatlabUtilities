@@ -22,15 +22,18 @@ classdef Colors < handle
     Red = [1.0, 0.0, 0.0];
     DarkRed = [150,0,0]./255;
     BloodRed = [187, 10, 30]*0.8./255;
+
     % my own simple colors
     Yellowish = [0.9, 0.9, 0.0];
     DarkOrange = [1.0, 0.5, 0.0];
     LightOrange = [1.0, 0.7, 0.3];
-
+    GuiOrange = [0.93,0.69,0.13];
+   
     DarkGreen = [0.0, 0.6, 0.0];
     BrightGreen = [0.0, 1.0, 0.0];
     Green = [0.0, 1.0, 0.0];
     LightGreen = [0.0, 0.8, 0.0];
+    GuiGreen = [0.39,0.83,0.07]
 
     DarkPurple = [0.5, 0.0, 0.5];
     DarkBlue = [103,169,207]./2./255;
@@ -42,6 +45,7 @@ classdef Colors < handle
     LightGray = [255, 255, 255]*0.75./255;
     MediumGray = [255, 255, 255]*0.5./255;
     DarkGray = [255, 255, 255]*0.25./255;
+    GuiGray = [0.94,0.94,0.94];
 
     Black = [0, 0, 0];
     White = [1, 1, 1];
