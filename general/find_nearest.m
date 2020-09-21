@@ -1,5 +1,10 @@
-function [nearestVal,nearestIdx] = find_nearest(findVals,data)
-  short_warn('Use dsearchn(data,findVals) is much more efficient!');
+function [nearestVal,nearestIdx] = find_nearest(findVals,data,doWarn)
+  if nargin < 3
+    doWarn = true;
+  end
+  if doWarn
+    short_warn('Use dsearchn(data,findVals) is much more efficient!');
+  end
   % [nearestVal,nearestIdx] = find_nearest(findVals,data)
   % looks for nearerst val and index for findVals on data
   findVals = double(findVals);
