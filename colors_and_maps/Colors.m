@@ -16,6 +16,39 @@ classdef Colors < handle
     perPlasma = plasma();
     perViridis = viridis();
 
+    % colors used for GUI, but generally are colors that work well together 
+    % http://paletton.com/#uid=70g0u0kw0w0jyC+oRxVy4oIDfjr 
+    % medium colors are used as text colors in GUI
+    % light colors are used for progress bars
+    % orange used for vessel processing
+    GuiFullOrange = [1, 0.298, 0];
+    GuiLightOrange = [1, 0.573, 0.388];
+    GuiMediumOrange = [1, 0.455, 0.224]; 
+    GuiDarkOrange = [0.773, 0.231, 0];
+
+    % yellow used for map processing
+    GuiFullYellow = [1, 0.58, 0];
+    GuiLightYellow = [1, 0.741, 0.388];
+    GuiMediumYellow = [1, 0.675, 0.224];
+    GuiDarkYellow = [0.773, 0.447, 0];
+
+    % blue used for volume processing
+    GuiFullBlue = [0.043, 0.373, 0.647];
+    GuiLightBlue = [0.318, 0.545, 0.733];
+    GuiMediumBlue = [0.184, 0.447, 0.667];
+    GuiDarkBlue = [0.031, 0.286, 0.498];
+
+    % green used for frangi processing
+    GuiFullGreen = [0, 0.682, 0.408];
+    GuiLightGreen = [0.298, 0.761, 0.573];
+    GuiMediumGreen = [0.157, 0.698, 0.482];
+    GuiDarkGreen = [0, 0.525, 0.314];
+
+    GuiOrange = [0.93,0.69,0.13];
+    GuiGreen = [0.39,0.83,0.07]
+    GuiGray = [0.94,0.94,0.94];
+    GuiRed = [0.94,0.0,0.0];
+
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % define some pretty colors for plotting -------------------------------------
     PureRed = [1.0, 0.0, 0.0];
@@ -27,13 +60,11 @@ classdef Colors < handle
     Yellowish = [0.9, 0.9, 0.0];
     DarkOrange = [1.0, 0.5, 0.0];
     LightOrange = [1.0, 0.7, 0.3];
-    GuiOrange = [0.93,0.69,0.13];
    
     DarkGreen = [0.0, 0.6, 0.0];
     BrightGreen = [0.0, 1.0, 0.0];
     Green = [0.0, 1.0, 0.0];
     LightGreen = [0.0, 0.8, 0.0];
-    GuiGreen = [0.39,0.83,0.07]
 
     DarkPurple = [0.5, 0.0, 0.5];
     DarkBlue = [103,169,207]./2./255;
@@ -45,7 +76,6 @@ classdef Colors < handle
     LightGray = [255, 255, 255]*0.75./255;
     MediumGray = [255, 255, 255]*0.5./255;
     DarkGray = [255, 255, 255]*0.25./255;
-    GuiGray = [0.94,0.94,0.94];
 
     Black = [0, 0, 0];
     White = [1, 1, 1];
@@ -213,35 +243,6 @@ classdef Colors < handle
       Colors.fireBush; Colors.tahitiGold; Colors.casablanca; Colors.crusta; ...
       Colors.seaBuckthorn; Colors.lightningYellow; Colors.burntOrange; ...
       Colors.buttercup; Colors.ecstasy; Colors.sandstorm; Colors.jaffa; Colors.zest]
-
-    % colors used for GUI, but generally are colors that work well together 
-    % http://paletton.com/#uid=70g0u0kw0w0jyC+oRxVy4oIDfjr 
-    % medium colors are used as text colors in GUI
-    % light colors are used for progress bars
-    % orange used for vessel processing
-    GuiFullOrange = [1, 0.298, 0];
-    GuiLightOrange = [1, 0.573, 0.388];
-    GuiMediumOrange = [1, 0.455, 0.224]; 
-    GuiDarkOrange = [0.773, 0.231, 0];
-
-    % yellow used for map processing
-    GuiFullYellow = [1, 0.58, 0];
-    GuiLightYellow = [1, 0.741, 0.388];
-    GuiMediumYellow = [1, 0.675, 0.224];
-    GuiDarkYellow = [0.773, 0.447, 0];
-
-    % blue used for volume processing
-    GuiFullBlue = [0.043, 0.373, 0.647];
-    GuiLightBlue = [0.318, 0.545, 0.733];
-    GuiMediumBlue = [0.184, 0.447, 0.667];
-    GuiDarkBlue = [0.031, 0.286, 0.498];
-
-    % green used for frangi processing
-    GuiFullGreen = [0, 0.682, 0.408];
-    GuiLightGreen = [0.298, 0.761, 0.573];
-    GuiMediumGreen = [0.157, 0.698, 0.482];
-    GuiDarkGreen = [0, 0.525, 0.314];
-
   end
 
 end
