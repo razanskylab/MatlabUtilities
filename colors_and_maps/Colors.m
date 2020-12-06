@@ -76,6 +76,9 @@ classdef Colors < handle
     LightGray = [255, 255, 255]*0.75./255;
     MediumGray = [255, 255, 255]*0.5./255;
     DarkGray = [255, 255, 255]*0.25./255;
+    LightGrey = Colors.LightGray;
+    MediumGrey = Colors.MediumGray;
+    DarkGrey = Colors.DarkGray;
 
     Black = [0, 0, 0];
     White = [1, 1, 1];
