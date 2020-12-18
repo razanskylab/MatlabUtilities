@@ -65,6 +65,7 @@ classdef Colors < handle
     BrightGreen = [0.0, 1.0, 0.0];
     Green = [0.0, 1.0, 0.0];
     LightGreen = [0.0, 0.8, 0.0];
+    LighterGreen = [227, 255, 227]./255;
 
     DarkPurple = [0.5, 0.0, 0.5];
     DarkBlue = [103,169,207]./2./255;
